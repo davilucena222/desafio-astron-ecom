@@ -8,16 +8,13 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  width: 100vw;
 }
 
 .info-discount {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
-  padding: 0 10.188rem;
+  padding: 0 17.188rem;
 
   margin-top: 2.188rem;
 }
@@ -55,13 +52,13 @@ main div#secondary-title {
   justify-content: center;  
 
   width: 90%;
-  height: 117px;
+  height: 127px;
 
   border-radius: 0px 0px 20px 20px;
   border-top: 5px dashed #FFF;
 
   color: #FFF;
-  font-size: 11.5rem;
+  font-size: 12rem;
   letter-spacing: -4px;
   font-weight: bold;
   background-color: red;
@@ -72,7 +69,7 @@ main div#secondary-title {
   background-size: cover;
 
   width: 100%;
-  height: 500px;
+  height: 700px;
 }
 
 div#info-container {
@@ -86,6 +83,42 @@ div#info-container {
 }
 
 div#info-container h2 {
+  width: 500px;
   font-size: 5rem;
   color: #FFF;
+  text-align: center;
+}
+
+div#info-container span {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -35px;
+  font-size: 2.5rem;
+  color: #FFF;
+  text-align: center;
+  line-height: 1;
+
+}
+
+button#access-link {
+  width: 150px;
+  height: 40px;
+
+  margin-top: 15px;
+
+  padding: 10px 10px;
+
+  background: red;
+  color: #FFF;
+  border: none;
+  border-radius: 5px;
+
+  font-size: 18px;
+}
+
+button#access-link:hover {
+  background: #8B0000;
+  cursor: pointer;
 }
