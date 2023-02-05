@@ -1,0 +1,50 @@
+{{ 'component-discount-coupon.css' | asset_url | stylesheet_tag }}
+
+<style>
+  #background-image {
+    background-image: url('{{ section.settings.background_image | image_url }}');
+  }
+</style>
+
+<div class="container">
+  <section class="container-title-banner" id="background-image">
+    <div class="info-discount">
+      <main>
+        <div id="main-title">
+          <span>CHUVA DE</span>
+        </div>
+
+        <div id="secondary-title">
+          <p>CUPOM</p>
+        </div>
+      </main>
+
+      <div id="info-container">
+        <h2>A GENTE SABE QUE VOCÊ AMA CUPOM!</h2>
+        <span>Por isso, preparamos vários deles para você aproveitar nossas ofertas com ainda mais desconto</span>
+
+        <button>VEM CÁ!</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+  {
+    "name": "Imagem de fundo",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Escolha 1 imagem de fundo"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Imagem de fundo cupom de desconto",
+        "category": "Coupon Discount"
+      }
+    ]
+  }
+{% endschema %}

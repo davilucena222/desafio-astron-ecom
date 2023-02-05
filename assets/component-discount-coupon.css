@@ -1,0 +1,91 @@
+body {
+  overflow-x: hidden;
+  color: #0000
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100vw;
+}
+
+.info-discount {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0 10.188rem;
+
+  margin-top: 2.188rem;
+}
+
+.container-title-banner main {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main div#main-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+
+  width: 90%;
+  height: 110px;
+
+  border-radius: 20px 20px 0px 0px;
+
+  color: blue;
+  font-size: 8.5rem;
+  letter-spacing: -4px;
+  font-weight: bold;
+  background-color: #FFF;
+
+  transform: rotate(-1deg) rotateX(32deg);
+}
+
+main div#secondary-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+
+  width: 90%;
+  height: 117px;
+
+  border-radius: 0px 0px 20px 20px;
+  border-top: 5px dashed #FFF;
+
+  color: #FFF;
+  font-size: 11.5rem;
+  letter-spacing: -4px;
+  font-weight: bold;
+  background-color: red;
+}
+
+#background-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100%;
+  height: 500px;
+}
+
+div#info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 700px;
+  color: red;
+}
+
+div#info-container h2 {
+  font-size: 5rem;
+  color: #FFF;
+}
