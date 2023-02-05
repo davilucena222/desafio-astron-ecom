@@ -1,21 +1,15 @@
 {{ 'component-discount-coupon.css' | asset_url | stylesheet_tag }}
 
-<style>
-  #background-image {
-    background-image: url('{{ section.settings.background_image | image_url }}');
-  }
-</style>
-
 <div class="container">
   <section class="container-title-banner" id="background-image">
     <div class="info-discount">
       <main>
         <div id="main-title">
-          <span>CHUVA DE</span>
+          <span>{{ section.settings.main_title }}</span>
         </div>
 
         <div id="secondary-title">
-          <p>CUPOM</p>
+          <p>{{ section.settings.secondary_title }}</p>
         </div>
       </main>
 
@@ -27,6 +21,80 @@
       </div>
     </div>
   </section>
+
+  <main id="coupons-container">
+    <section id="coupon">
+      <div>
+        <div id="container-content">
+          <p>CUPOM DE ATÉ</p>
+          <span id="container-discount">
+            <p id="number-discount">5</p>
+            <span id="porcentage">%</span>
+          </span>
+        </div>
+
+        <span>DE DESCONTO</span>
+      </div>
+
+      <div id="coupon-name">
+        <p>USE: VSMERECE</p>
+      </div>
+    </section>
+
+    <section id="coupon">
+      <div>
+        <div id="container-content">
+          <p>CUPOM DE ATÉ</p>
+          <span id="container-discount">
+            <p id="number-discount">10</p>
+            <span id="porcentage">%</span>
+          </span>
+        </div>
+
+        <span>DE DESCONTO</span>
+      </div>
+
+      <div id="coupon-name">
+        <p>USE: VSMERECE</p>
+      </div>
+    </section>
+
+    <section id="coupon">
+      <div>
+        <div id="container-content">
+          <p>CUPOM DE ATÉ</p>
+          <span id="container-discount">
+            <p id="number-discount">15</p>
+            <span id="porcentage">%</span>
+          </span>
+        </div>
+
+        <span>DE DESCONTO</span>
+      </div>
+
+      <div id="coupon-name">
+        <p>USE: VSMERECE</p>
+      </div>
+    </section>
+
+    <section id="coupon">
+      <div>
+        <div id="container-content">
+          <p>CUPOM DE ATÉ</p>
+          <span id="container-discount">
+            <p id="number-discount">20</p>
+            <span id="porcentage">%</span>
+          </span>
+        </div>
+
+        <span>DE DESCONTO</span>
+      </div>
+
+      <div id="coupon-name">
+        <p>USE: VSMERECE</p>
+      </div>
+    </section>
+  </main>
 </div>
 
 {% schema %}
@@ -42,7 +110,7 @@
         "id": "text_h2",
         "type": "richtext",
         "label": "Informe um título",
-        "default": "<p>A GENTE SABE QUE VOCÊ AMA CUPOM!</p>"
+        "default": "A GENTE SABE QUE VOCÊ AMA CUPOM!"
       },
       {
         "id": "text_span",
@@ -55,6 +123,26 @@
         "type": "text",
         "label": "Informe um título para o botão",
         "default": "VEM CÁ!"
+      }, {
+        "id": "main_title",
+        "type": "text",
+        "label": "Título Principal",
+        "default": "CHUVA DE"
+      }, {
+        "id": "secondary_title",
+        "type": "text",
+        "label": "Título Secundário",
+        "default": "CUPOM"
+      }, {
+        "id": "text_h2",
+        "type": "richtext",
+        "label": "Informe um título",
+        "default": "A GENTE SABE QUE VOCÊ AMA CUPOM!"
+      }, {
+        "id": "text_span",
+        "type": "text",
+        "label": "Informe um texto",
+        "default": "Por isso, preparamos vários deles para você aproveitar nossas ofertas com ainda mais desconto."
       }
     ],
     "presets": [
