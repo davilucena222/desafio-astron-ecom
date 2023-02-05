@@ -20,10 +20,10 @@
       </main>
 
       <div id="info-container">
-        <h2>A GENTE SABE QUE VOCÊ AMA CUPOM!</h2>
-        <span>Por isso, preparamos vários deles para você aproveitar nossas ofertas com ainda mais desconto.</span>
+        <h2>{{ section.settings.text_h2 }}</h2>
+        <span>{{ section.settings.text_span }}</span>
 
-        <button id="access-link">VEM CÁ!</button>
+        <button id="access-link">{{ section.settings.text_button }}</button>
       </div>
     </div>
   </section>
@@ -32,12 +32,29 @@
 {% schema %}
   {
     "name": "Imagem de fundo",
-    "tag": "section",
     "settings": [
       {
-        "type": "image_picker",
         "id": "background_image",
+        "type": "image_picker",
         "label": "Escolha 1 imagem de fundo"
+      },
+      {
+        "id": "text_h2",
+        "type": "richtext",
+        "label": "Informe um título",
+        "default": "<p>A GENTE SABE QUE VOCÊ AMA CUPOM!</p>"
+      },
+      {
+        "id": "text_span",
+        "type": "text",
+        "label": "Informe um texto",
+        "default": "Por isso, preparamos vários deles para você aproveitar nossas ofertas com ainda mais desconto."
+      },
+      {
+        "id": "text_button",
+        "type": "text",
+        "label": "Informe um título para o botão",
+        "default": "VEM CÁ!"
       }
     ],
     "presets": [
