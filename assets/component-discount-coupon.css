@@ -1,6 +1,23 @@
+@font-face {
+  font-family: "Roboto Medium";
+  src: url(../font/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url(../font/Roboto-Bold.ttf);
+}
+
 body {
+  font-family: "Roboto Medium", "Roboto Bold", sans-serif;
+
   overflow-x: hidden;
   color: #0000
+}
+
+#background-image {
+  background-image: url('{{ section.settings.background_image | image_url }}');
+  background-size: 100% 73%;
 }
 
 .container {
@@ -26,6 +43,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-left: -4rem;
 }
 
 main div#main-title {
@@ -33,13 +51,13 @@ main div#main-title {
   align-items: center;
   justify-content: center;  
 
-  width: 90%;
+  width: 86%;
   height: 110px;
 
   border-radius: 20px 20px 0px 0px;
 
   color: blue;
-  font-size: 8.5rem;
+  font-size: 6.5rem;
   letter-spacing: -4px;
   font-weight: bold;
   background-color: #FFF;
@@ -52,14 +70,14 @@ main div#secondary-title {
   align-items: center;
   justify-content: center;  
 
-  width: 90%;
-  height: 127px;
+  width: 85%;
+  height: 108px;
 
   border-radius: 0px 0px 20px 20px;
   border-top: 5px dashed #FFF;
 
   color: #FFF;
-  font-size: 12rem;
+  font-size: 10rem;
   letter-spacing: -4px;
   font-weight: bold;
   background-color: red;
@@ -160,7 +178,7 @@ section#coupon div {
 }
 
 section#coupon div p {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
   text-align: center;
   color: blue;
@@ -171,13 +189,13 @@ section#coupon span#container-discount {
   align-items: center;
   justify-content: center;
   height: 80px;
-  margin-top: -1.1rem;
+  margin-top: -0.500rem;
   margin-bottom: 1.25rem;
 }
 
 section#coupon p#number-discount {
   width: auto;
-  font-size: 12.5rem;
+  font-size: 10rem;
   font-weight: bold;
   text-align: center;
   color: red;
@@ -192,7 +210,7 @@ section#coupon span#porcentage {
 }
 
 section#coupon span {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
   text-align: center;
   color: blue;
@@ -204,19 +222,210 @@ section#coupon div#coupon-name {
   border-top: 5px dashed #FFF;
   margin-top: 2.125rem;
   height: 70px;
-  padding: 0.625rem;
+  padding: 0.2rem;
 
   width: 100%;
   border-radius: 0px 0px 20px 20px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
 
   background: red;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 section#coupon div#coupon-name p {
-  font-size: 33px;
+  font-size: 28px;
   font-weight: bold;
   text-align: center;
   color: #FFF;
   margin-top: 2.25rem;
+}
+
+
+/* Responsive design para tela menores */
+@media (max-width: 2144px) {
+  div.info-discount {
+    margin-left: -150rem;
+  }
+}
+
+@media (max-width: 1900px) {
+  div.info-discount {
+    margin-left: 11rem;
+  }
+}
+
+@media (max-widthh: 1700px) {
+  div.info-discount {
+    margin-left: 18rem;
+  }
+}
+
+@media (max-width: 1600px) {
+  main div#secondary-title {
+    font-size: 9rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  div.info-discount {
+    margin-left: 28rem;
+  }
+}
+
+@media (max-width: 1450px) {
+  div.info-discount {
+    margin-left: -3rem;
+  }
+
+  main div#secondary-title {
+    font-size: 8rem;
+  }
+}
+
+@media (max-width: 1450px) {
+  main div#secondary-title {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  main div#main-title {
+    font-size: 5.7rem;
+  }
+  div#info-container h2 {
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+  }
+  div#info-container span {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 1350px) {
+  .container-title-banner main {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container-title-banner main {
+    margin-left: -5rem;
+  }
+
+  div#info-container {
+    margin-right: -10rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  div#info-discount {
+    margin-left: -30rem;
+    gap: 20rem;
+  }
+  
+  div#info-container {
+    margin-right: -15rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  main#coupons-container {
+    display: grid;
+    grid-template-columns: 300px 300px;
+  }
+}
+
+@media (max-width: 1100px) {
+  div.info-discount {
+    margin-left: -8rem;
+  }
+}
+
+@media (max-width: 1090px) {
+  div.info-discount {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+
+  .container-title-banner main {
+    margin-bottom: 2rem;
+  }
+
+  div#info-container {
+    margin-left: -15rem;
+  }
+
+  div#info-container h2 {
+    font-size: 4rem;
+  }
+
+  div#info-container span {
+    font-size: 2rem;
+  }
+
+  main#coupons-container {
+    margin-top: -20rem;
+  }
+}
+
+@media (max-width: 960px) {
+  main#coupons-container {
+    margin-left: 4rem;
+  }
+}
+
+@media (max-width: 590px) {
+  div.info-discount {
+    margin-left: 3rem;
+  }
+}
+
+@media (max-width: 660px) {
+  div#info-container h2 {
+    text-align: center;
+    font-size: 3.5rem;
+  }
+
+  div#info-container span {
+    width: 350px;
+  }
+
+  div.info-discount {
+    margin-left: 2rem;
+  }
+
+  main#coupons-container {
+    display: grid;
+    grid-template-columns: 300px;
+    margin-top: -17rem;
+  }
+}
+
+@media (max-width: 500px) {
+  main div#main-title {
+    width: 300px;
+    font-size: 5rem;
+  }
+
+  main div#secondary-title {
+    width: 300px;
+  }
+
+  div#info-container h2 {
+    width: 300px;
+    font-size: 3rem;
+    margin-bottom: 6rem;
+  }
+
+  div#info-container span {
+    font-size: 1.8rem;;
+  }
+
+  button#access-link {
+    width: 300px;
+    height: 50px;
+  }
 }

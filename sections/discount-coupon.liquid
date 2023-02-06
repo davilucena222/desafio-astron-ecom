@@ -1,5 +1,12 @@
 {{ 'component-discount-coupon.css' | asset_url | stylesheet_tag }}
 
+<style>
+  #background-image {
+    background-image: url('{{ section.settings.background_image | image_url }}');
+    background-size: 100% 73%;
+  }
+</style>
+
 <div class="container">
   <section class="container-title-banner" id="background-image">
     <div class="info-discount">
@@ -17,89 +24,41 @@
         <h2>{{ section.settings.text_h2 }}</h2>
         <span>{{ section.settings.text_span }}</span>
 
-        <button id="access-link">{{ section.settings.text_button }}</button>
+        <a href={{ section.settings.button_link }}>
+          <button id="access-link">{{ section.settings.text_button }}</button>
+        </a>
       </div>
     </div>
   </section>
 
   <main id="coupons-container">
-    <section id="coupon">
-      <div>
-        <div id="container-content">
-          <p>CUPOM DE ATÉ</p>
-          <span id="container-discount">
-            <p id="number-discount">5</p>
-            <span id="porcentage">%</span>
-          </span>
+    {% for block in section.blocks %}
+      <section id="coupon">
+        <div>
+          <div id="container-content">
+            <p>CUPOM DE ATÉ</p>
+            <span id="container-discount">
+              <p id="number-discount">{{ block.settings.percentage }}</p>
+              <span id="porcentage">%</span>
+            </span>
+          </div>
+
+          <span>DE DESCONTO</span>
         </div>
 
-        <span>DE DESCONTO</span>
-      </div>
-
-      <div id="coupon-name">
-        <p>USE: VSMERECE</p>
-      </div>
-    </section>
-
-    <section id="coupon">
-      <div>
-        <div id="container-content">
-          <p>CUPOM DE ATÉ</p>
-          <span id="container-discount">
-            <p id="number-discount">10</p>
-            <span id="porcentage">%</span>
-          </span>
+        <div id="coupon-name">
+          <p>USE: {{ block.settings.coupon_name }}</p>
         </div>
-
-        <span>DE DESCONTO</span>
-      </div>
-
-      <div id="coupon-name">
-        <p>USE: VSMERECE</p>
-      </div>
-    </section>
-
-    <section id="coupon">
-      <div>
-        <div id="container-content">
-          <p>CUPOM DE ATÉ</p>
-          <span id="container-discount">
-            <p id="number-discount">15</p>
-            <span id="porcentage">%</span>
-          </span>
-        </div>
-
-        <span>DE DESCONTO</span>
-      </div>
-
-      <div id="coupon-name">
-        <p>USE: VSMERECE</p>
-      </div>
-    </section>
-
-    <section id="coupon">
-      <div>
-        <div id="container-content">
-          <p>CUPOM DE ATÉ</p>
-          <span id="container-discount">
-            <p id="number-discount">20</p>
-            <span id="porcentage">%</span>
-          </span>
-        </div>
-
-        <span>DE DESCONTO</span>
-      </div>
-
-      <div id="coupon-name">
-        <p>USE: VSMERECE</p>
-      </div>
-    </section>
+      </section>
+    {% endfor %}
   </main>
 </div>
 
 {% schema %}
   {
     "name": "Imagem de fundo",
+    "tag": "section",
+    "max_blocks": 4,
     "settings": [
       {
         "id": "background_image",
@@ -110,7 +69,7 @@
         "id": "text_h2",
         "type": "richtext",
         "label": "Informe um título",
-        "default": "A GENTE SABE QUE VOCÊ AMA CUPOM!"
+        "default": "<p>A GENTE SABE QUE VOCÊ AMA CUPOM!</p>"
       },
       {
         "id": "text_span",
@@ -124,6 +83,11 @@
         "label": "Informe um título para o botão",
         "default": "VEM CÁ!"
       }, {
+        "id": "button_link",
+        "type": "url",
+        "label": "Informe um link",
+        "default": ""
+      }, {
         "id": "main_title",
         "type": "text",
         "label": "Título Principal",
@@ -133,16 +97,24 @@
         "type": "text",
         "label": "Título Secundário",
         "default": "CUPOM"
-      }, {
-        "id": "text_h2",
-        "type": "richtext",
-        "label": "Informe um título",
-        "default": "A GENTE SABE QUE VOCÊ AMA CUPOM!"
-      }, {
-        "id": "text_span",
-        "type": "text",
-        "label": "Informe um texto",
-        "default": "Por isso, preparamos vários deles para você aproveitar nossas ofertas com ainda mais desconto."
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Coupons",
+        "type": "repeater",
+        "settings": [
+          {
+            "id": "percentage",
+            "type": "text",
+            "label": "Informe o percentual de desconto"
+          }, {
+            "id": "coupon_name",
+            "type": "text",
+            "label": "Informe o nome do cupom",
+            "default": "CUPOM"
+          }
+        ]
       }
     ],
     "presets": [
